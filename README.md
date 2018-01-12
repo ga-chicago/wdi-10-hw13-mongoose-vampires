@@ -12,7 +12,9 @@ Course: wdi-10-chi<br>
 
 ### Strict Deadline: Due Sunday January 14 2018 at 2pm
 
-### Fork, Clone, complete, make a pull request
+Because there will be another assignment assigned Friday and due Tuesday before class.
+
+### Fork, clone, complete, make a pull request -- Wait until you finish to make the pull request.
 
 ---
 
