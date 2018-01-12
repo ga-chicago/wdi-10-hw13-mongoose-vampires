@@ -57,8 +57,8 @@ Article.findOneAndRemove({ author : 'Matt' }, (err, article)=>{
 ```
 
 <hr>
-#  * * * * Everything below here not covered in class * * * * 
 
+# Everything below this was not covered in class 
 
 ## Extend the abilities of models
 

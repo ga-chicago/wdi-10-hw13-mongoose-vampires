@@ -2,7 +2,7 @@
 
 ## Topics
 
-* Explain what an ODM is
+* What an ODM is
 * Create a Schema for a collection
 * Create a model and save it
 * Find a specific model
