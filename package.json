@@ -1,0 +1,22 @@
+{
+  "name": "wdi-10-hw13-mongoose-vampires",
+  "version": "1.0.0",
+  "description": "![ga](http://mobbook.generalassemb.ly/ga_cog.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmikitin/wdi-10-hw13-mongoose-vampires.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmikitin/wdi-10-hw13-mongoose-vampires/issues"
+  },
+  "homepage": "https://github.com/kmikitin/wdi-10-hw13-mongoose-vampires#readme",
+  "dependencies": {
+    "mongoose": "^4.13.9"
+  }
+}
