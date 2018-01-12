@@ -2,19 +2,20 @@
 
 # wdi-10-chi _fluff-hounds_
 
----
+
 Title: Mongoose Vampires<br>
 Type: Homework<br>
-Duration: A pretty good long while -- Start THURSDAY NIGHT so you can ask us quesitons Friday <br>
+Duration: A pretty good long while -- Start THURSDAY NIGHT so you can ask us questions Friday <br>
 Creator: WDI-Meeseeks <br>
 Adapted by: Kristyn Bryan and Reuben Ayres<br>
 Course: wdi-10-chi<br>
 
-## Strict Deadline: Due Sunday January 14 2018 at 2pm
+### Strict Deadline: Due Sunday January 14 2018 at 2pm
 
-**Fork, Clone, complete, make a pull request**
+### Fork, Clone, complete, make a pull request
 
 ---
+
 # Mongoose Vampires
 
 For this assignment, you will be using some of the mongoose commands that you learned in class and you will be **reading the documents** to find **new** queries to complete the following activities. Researching queries and implementing them is a big part of this homework!
