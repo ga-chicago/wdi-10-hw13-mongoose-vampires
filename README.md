@@ -12,6 +12,8 @@ Course: wdi-10-chi<br>
 
 ## Strict Deadline: Due Sunday January 14 2018 at 2pm
 
+**Fork, Clone, complete, make a pull request**
+
 ---
 # Mongoose Vampires
 
