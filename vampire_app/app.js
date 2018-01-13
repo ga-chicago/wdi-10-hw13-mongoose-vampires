@@ -206,6 +206,80 @@ db.once('open', () => {
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
 
+	// //query vamps for existence of title property
+	// Vampire.find({
+	// 	title: {
+	// 		$exists: true
+	// 	}
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.log(err);
+	// 	}
+	// 	else {
+	// 		console.log(data);
+	// 	}
+	// })
+
+	// //find vamps that do not have victims property
+	// Vampire.find({
+	// 	victims: {
+	// 		$exists: false
+	// 	}
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.log(err);
+	// 	}
+	// 	else {
+	// 		console.log(data);
+	// 	}
+	// })
+
+	// //find vamps that have a title and no victims
+	// Vampire.find({
+	// 	$and: [{
+	// 		title: {
+	// 			$exists: true
+	// 		}
+	// 	},
+	// 	{
+	// 		victims: {
+	// 			$exists: false
+	// 		}
+	// 	}
+	// ]},
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.log(err);
+	// 	}
+	// 	else {
+	// 		console.log(data);
+	// 	}
+	// })
+
+	// //find vamps that have victims property and have greater than 1000 victims
+	// Vampire.find({
+	// 	$and: [{
+	// 		victims: {
+	// 			$exists: true
+	// 		}
+	// 	},
+	// 	{
+	// 		victims: {
+	// 			$gt: 1000
+	// 		}
+	// 	}
+	// ]},
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.log(err);
+	// 	}
+	// 	else {
+	// 		console.log(data);
+	// 	}
+	// })
+
 /////////////////////////////////////////////////
 // ### Select with OR
 
