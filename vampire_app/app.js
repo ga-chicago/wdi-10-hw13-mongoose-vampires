@@ -68,6 +68,10 @@ mongoose.connection.once('open', () => {
 //     hair_color: 'black' }
 /////////////////////////////////////////////////
 // ## QUERYING
+/////////////////////////////////////////////////
+// ### Select by comparison
+
+// Find all the vampires that that are females
 // Vampire.find({
 // 		gender: 'f'
 // 	}, (err, vampire) => {
@@ -75,6 +79,7 @@ mongoose.connection.once('open', () => {
 // 		mongoose.connection.close();
 // 	})
 
+// have greater than 500 victims
 // Vampire.find({
 // 		victims: { $gt: 500}
 // 	}, (err, vampire) => {
@@ -82,6 +87,7 @@ mongoose.connection.once('open', () => {
 // 		mongoose.connection.close();
 // 	})
 
+// have fewer than or equal to 150 victims
 // Vampire.find({
 // 		victims: { $lte: 150}
 // 	}, (err, vampire) => {
@@ -89,6 +95,7 @@ mongoose.connection.once('open', () => {
 // 		mongoose.connection.close();
 // 	})
 
+// have a victim count is not equal to 210234
 // Vampire.find({
 // 		victims: { $ne: 210234}
 // 	}, (err, vampire) => {
@@ -96,6 +103,17 @@ mongoose.connection.once('open', () => {
 // 		mongoose.connection.close();
 // 	})
 
+// have greater than 150 AND fewer than 500 victims
+// Vampire.find({
+// 		$and: [{victims: {$gt: 150}}, {victims: {$lt: 500}}]
+// 	}, (err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// 	})
+
+/////////////////////////////////////////////////
+// ### Select by exists or does not exist
+// have a title property
 // Vampire.find({
 // 		title: { $exists: true }
 // 	}, (err, vampire) => {
@@ -103,6 +121,7 @@ mongoose.connection.once('open', () => {
 // 		mongoose.connection.close();
 // 	})
 
+// do not have a victims property
 // Vampire.find({
 // 		victims: { $exists: false }
 // 	}, (err, vampire) => {
@@ -110,6 +129,7 @@ mongoose.connection.once('open', () => {
 // 		mongoose.connection.close();
 // 	})
 
+// have a title AND no victims
 // Vampire.find({
 // 		$and: [{title: {$exists: true}}, {victims: {$exists: false}} ]
 // 	}, (err, vampire) => {
@@ -117,20 +137,47 @@ mongoose.connection.once('open', () => {
 // 		mongoose.connection.close();
 // 	})
 
+// have victims AND the victims they have are greater than 1000
+// Vampire.find({
+// 		$and: [{victims: {$exists: true} }, {victims: {$gt: 1000}}]
+// 	}, (err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// 	})
+
+/////////////////////////////////////////////////
+// ### Select with OR
+// are from New York, New York, US or New Orleans, Louisiana, US
+// Vampire.find({
+// 		$or: [{location: 'New York, New York, US' }, {location: 'New Orleans, Louisiana, US'}]
+// 	}, (err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// 	})
+
+// love brooding or being tragic
+// Vampire.find({
+// 		loves: {$in: ['brooding', 'being tragic']}
+// 	}, (err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// 	})
+
+// have more than 1000 victims or love marshmallows
+// Vampire.find({
+// 		$or: [{victims: {$gt: 1000}}, {loves: {$in: ['marshmallows']}}]
+// 	}, (err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// 	})
+
+// have red hair or green eyes
 Vampire.find({
-		$and: [{victims: {$exists: true} }, {victims: {$gt: 1000}}]
+		$or: [{hair_color: 'red'}, {eye_color: 'green'}]
 	}, (err, vampire) => {
 		console.log(vampire);
 		mongoose.connection.close();
 	})
-/////////////////////////////////////////////////
-// ### Select by comparison
-
-/////////////////////////////////////////////////
-// ### Select by exists or does not exist
-
-/////////////////////////////////////////////////
-// ### Select with OR
 
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
