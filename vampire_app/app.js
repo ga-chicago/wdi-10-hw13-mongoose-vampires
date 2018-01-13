@@ -96,8 +96,29 @@ mongoose.connection.once('open', () => {
 // 		mongoose.connection.close();
 // 	})
 
+// Vampire.find({
+// 		title: { $exists: true }
+// 	}, (err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// 	})
+
+// Vampire.find({
+// 		victims: { $exists: false }
+// 	}, (err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// 	})
+
+// Vampire.find({
+// 		$and: [{title: {$exists: true}}, {victims: {$exists: false}} ]
+// 	}, (err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// 	})
+
 Vampire.find({
-		victims: { $gt: 150, $lt: 500}
+		$and: [{victims: {$exists: true} }, {victims: {$gt: 1000}}]
 	}, (err, vampire) => {
 		console.log(vampire);
 		mongoose.connection.close();
