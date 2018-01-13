@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 // create the schema
 const vampireSchema = new mongoose.Schema({
 	name: {type: String, required: true},
-  	hair_color: String,
+  	hair_color: {type: String, default: 'blond'},
   	eye_color: String,
-  	dob: new Date(year, month, day, hour, minute),
+  	dob: Date,
   	loves: [String],
   	location: String,
   	gender: String,
