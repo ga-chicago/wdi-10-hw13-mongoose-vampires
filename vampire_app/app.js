@@ -32,97 +32,176 @@ db.on('error', () => {
 db.once('open', () => {
 	console.log('connected to tha db');
 
-	// Vampire.collection.insertMany(vampireData,(err, data) => {
- //    	console.log("added provided vampire data", data)
- //    	mongoose.connection.close();
- //  	});
+// 	Vampire.collection.insertMany(vampireData,(err, data) => {
+//     	console.log("added provided vampire data", data)
+//     	mongoose.connection.close();
+//   	});
 
 
 
-// ### Add some new vampire data
+// // ### Add some new vampire data
 
-	Vampire.create({
-		name: 'michael weber',
-		hair_color: 'brown',
-		eye_color: 'green',
-		dob: '1988-09-15',
-		loves: ['coding','coffee'],
-		location: 'chicago',
-		gender: 'male',
-		victims: 0
-	},
-	(err, data) => {
-		if (err) {
-			console.error(err);
-		}
-		else {
-			console.log('added michael');
-		}
-	});
+// 	Vampire.create({
+// 		name: 'michael weber',
+// 		hair_color: 'brown',
+// 		eye_color: 'green',
+// 		dob: '1988-09-15',
+// 		loves: ['coding','coffee'],
+// 		location: 'chicago',
+// 		gender: 'm',
+// 		victims: 0
+// 	},
+// 	(err, data) => {
+// 		if (err) {
+// 			console.error(err);
+// 		}
+// 		else {
+// 			console.log('added michael');
+// 		}
+// 	});
 
-	Vampire.create({
-		name: 'vampire2',
-		hair_color: 'white',
-		eye_color: 'yellow',
-		dob: '1906-06-06',
-		loves: ['blood','more blood'],
-		location: 'london',
-		gender: 'male',
-		victims: 5000
-	},
-	(err, data) => {
-		if (err) {
-			console.error(err);
-		}
-		else {
-			console.log('added vamp2');
-		}
-	});
+// 	Vampire.create({
+// 		name: 'vampire2',
+// 		hair_color: 'white',
+// 		eye_color: 'yellow',
+// 		dob: '1906-06-06',
+// 		loves: ['blood','more blood'],
+// 		location: 'london',
+// 		gender: 'm',
+// 		victims: 5000
+// 	},
+// 	(err, data) => {
+// 		if (err) {
+// 			console.error(err);
+// 		}
+// 		else {
+// 			console.log('added vamp2');
+// 		}
+// 	});
 
-	Vampire.create({
-		name: 'abbie rappaport',
-		hair_color: 'brown',
-		eye_color: 'brown',
-		dob: '1995-01-18',
-		loves: ['art','videogames'],
-		location: 'montreal',
-		gender: 'female',
-		victims: 1
-	},
-	(err, data) => {
-		if (err) {
-			console.error(err);
-		}
-		else {
-			console.log('added abbie');
-		}
-	});
+// 	Vampire.create({
+// 		name: 'abbie rappaport',
+// 		hair_color: 'brown',
+// 		eye_color: 'brown',
+// 		dob: '1995-01-18',
+// 		loves: ['art','videogames'],
+// 		location: 'montreal',
+// 		gender: 'f',
+// 		victims: 1
+// 	},
+// 	(err, data) => {
+// 		if (err) {
+// 			console.error(err);
+// 		}
+// 		else {
+// 			console.log('added abbie');
+// 		}
+// 	});
 
-	Vampire.create({
-		name: 'gondola brown',
-		hair_color: 'red',
-		eye_color: 'black',
-		dob: '1750-10-15',
-		loves: ['death','succulent flesh'],
-		location: 'hell',
-		gender: 'female',
-		victims: 127980724
-	},
-	(err, data) => {
-		if (err) {
-			console.error(err);
-		}
-		else {
-			console.log('added gondola');
-		}
-	});
+// 	Vampire.create({
+// 		name: 'gondola brown',
+// 		hair_color: 'red',
+// 		eye_color: 'black',
+// 		dob: '1750-10-15',
+// 		loves: ['death','succulent flesh'],
+// 		location: 'hell',
+// 		gender: 'f',
+// 		victims: 127980724
+// 	},
+// 	(err, data) => {
+// 		if (err) {
+// 			console.error(err);
+// 		}
+// 		else {
+// 			console.log('added gondola');
+// 		}
+// 	});
 
 
-})
 /////////////////////////////////////////////////
 // ## QUERYING
 /////////////////////////////////////////////////
 // ### Select by comparison
+
+	// // find all female vamps
+	// Vampire.find({
+	// 	gender: 'f'
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.error(err);
+	// 	}
+	// 	else {
+	// 		console.log(data);
+	// 	}
+	// })
+
+	// //find all vamps with greater than 500 victims
+	// Vampire.find({
+	// 	victims: {
+	// 		$gt: 500
+	// 	}
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.error(err);
+	// 	}
+	// 	else {
+	// 		console.log(data);
+	// 	}
+	// })
+
+	// //find all vamps with fewer or equal to 150 victims
+	// Vampire.find({
+	// 	victims: {
+	// 		$lte: 150
+	// 	}
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.error(err);
+	// 	}
+	// 	else {
+	// 		console.log(data);
+	// 	}
+	// })
+
+	// //find all vamps with a victim count that is not 210234
+	// Vampire.find({
+	// 	victims: {
+	// 		$ne: 210234
+	// 	}
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.error(err);
+	// 	}
+	// 	else {
+	// 		console.log(data);
+	// 	}
+	// })
+
+	// //find all vamps with greater than 150 and less than 500 victims
+	// Vampire.find({
+	// 	$and: [{
+	// 		victims: {
+	// 			$gt: 150
+	// 		}
+	// 	},
+	// 	{
+	// 		victims: {
+	// 			$lt: 500
+	// 		}
+	// 	}]
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.error(err);
+	// 	}
+	// 	else {
+	// 		console.log(data);
+	// 	}
+	// })
 
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
@@ -159,3 +238,7 @@ db.once('open', () => {
 //## Negative Selection
 
 /////////////////////////////////////////////////
+
+
+
+})
