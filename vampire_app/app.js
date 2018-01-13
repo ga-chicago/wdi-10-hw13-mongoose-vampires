@@ -1,10 +1,24 @@
 // 1. Require your node modules
+const mongoose = require('mongoose');
+const db = mongoose.connection;
 
 // 2. Require your model (and possibly your extra data source);
+const Vampire = require('./models/vampire.js');
+const vampireData = require('./populateVampires.js')
 
 // 3. Connect your database and collection name
+mongoose.connect('mongodb://localhost:27017/vampires', {
+	useMongoClient: true
+});
+
+mongoose.connection.once('open', (req, res) => {
+	console.log('db connection open');
+})
 
 // 4. Open your mongoose connection
+db.on('error', () => {
+	console.error('there was an error connecting to the db');
+});
 
 /////////////////////////////////////////////////
 //Write your answers to add, query, update, remove, and Hungry for More below.
@@ -15,8 +29,96 @@
 // INSERT USING MONGOOSE
 // ### Add the vampire data that we gave you
 
+db.once('open', () => {
+	console.log('connected to tha db');
+
+	// Vampire.collection.insertMany(vampireData,(err, data) => {
+ //    	console.log("added provided vampire data", data)
+ //    	mongoose.connection.close();
+ //  	});
+
+
+
 // ### Add some new vampire data
 
+	Vampire.create({
+		name: 'michael weber',
+		hair_color: 'brown',
+		eye_color: 'green',
+		dob: '1988-09-15',
+		loves: ['coding','coffee'],
+		location: 'chicago',
+		gender: 'male',
+		victims: 0
+	},
+	(err, data) => {
+		if (err) {
+			console.error(err);
+		}
+		else {
+			console.log('added michael');
+		}
+	});
+
+	Vampire.create({
+		name: 'vampire2',
+		hair_color: 'white',
+		eye_color: 'yellow',
+		dob: '1906-06-06',
+		loves: ['blood','more blood'],
+		location: 'london',
+		gender: 'male',
+		victims: 5000
+	},
+	(err, data) => {
+		if (err) {
+			console.error(err);
+		}
+		else {
+			console.log('added vamp2');
+		}
+	});
+
+	Vampire.create({
+		name: 'abbie rappaport',
+		hair_color: 'brown',
+		eye_color: 'brown',
+		dob: '1995-01-18',
+		loves: ['art','videogames'],
+		location: 'montreal',
+		gender: 'female',
+		victims: 1
+	},
+	(err, data) => {
+		if (err) {
+			console.error(err);
+		}
+		else {
+			console.log('added abbie');
+		}
+	});
+
+	Vampire.create({
+		name: 'gondola brown',
+		hair_color: 'red',
+		eye_color: 'black',
+		dob: '1750-10-15',
+		loves: ['death','succulent flesh'],
+		location: 'hell',
+		gender: 'female',
+		victims: 127980724
+	},
+	(err, data) => {
+		if (err) {
+			console.error(err);
+		}
+		else {
+			console.log('added gondola');
+		}
+	});
+
+
+})
 /////////////////////////////////////////////////
 // ## QUERYING
 /////////////////////////////////////////////////
