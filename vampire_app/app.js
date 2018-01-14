@@ -87,9 +87,39 @@ mongoose.connection.on('disconnected', () => {
 // ## QUERYING
 /////////////////////////////////////////////////
 // ### Select by comparison
+// Vampire.find({gender: 'f'},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({victims: { $gte: 500 }},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({victims: { $gte: 500 }},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({victims: { $lte: 150 }},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({victims: { $ne: 210234 }},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({$and:[{victims: { $gte: 150 }},{victims: { $lt: 500 }}]},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
 
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
+
 
 /////////////////////////////////////////////////
 // ### Select with OR
