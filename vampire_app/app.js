@@ -136,6 +136,25 @@ mongoose.connection.on('disconnected', () => {
 
 /////////////////////////////////////////////////
 // ### Select with OR
+// Vampire.find({$or:[{location:'New York, New York, US'},{location:'New Orleans, Louisiana, US'}]},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({$or:[{loves:'brooding'},{loves:'being tragic'}]},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({$or:[{loves:'marshmallows'},{victims:{$gt: 1000}}]},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({$or:[{hair_color:'red'},{eye_color:"green"}]},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
 
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
