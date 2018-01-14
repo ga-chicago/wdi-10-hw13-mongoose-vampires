@@ -185,8 +185,7 @@ mongoose.connection.on('disconnected', () => {
 // 	mongoose.connection.close();
 // });
 
-// Vampire.find({ location: { $nin:'Rome, Italy' } },(err,foundVamps) => {
-// 	// How do I query for just 'Rome' instead of the full location
+// Vampire.find({ location: {$not : /^Rome/} },(err,foundVamps) => {
 // 	console.log(foundVamps);
 // 	mongoose.connection.close();
 // });
