@@ -289,21 +289,89 @@ mongoose.connection.once('open', () => {
 // Ok, at this point I got fed up with it not adding the portrayed_by key and gave up for now.
 
 // replace the first male vampire with another whose name is 'Guy Man', and who has a key 'is_actually' with the value 'were-lizard'
-Vampire.findOneAndUpdate(
-	{gender: 'm'},
-	{
-     $set: { name: 'Guy Man', is_actually: 'were-lizard' }
-  	},
-	{ upsert: true },
-	(err, vampire) => {
-		console.log(vampire);
-		mongoose.connection.close();
-	})
+// Vampire.findOneAndUpdate(
+// 	{gender: 'm'},
+// 	{
+//      $set: { name: 'Guy Man', is_actually: 'were-lizard' }
+//   	},
+// 	{ upsert: true },
+// 	(err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+	// })
 // same here, couldn't get is_actually to show up 
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
+// Update 'Guy Man' to have a gender of 'f'
+// Vampire.findOneAndUpdate(
+// 	{ name: 'Guy Man'},
+// 	{ $set: { gender: 'f'} },
+// 	{ new: true},
+// 	(err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// })
+
+// Update 'Eve' to have a gender of 'm'
+// Vampire.findOneAndUpdate(
+// 	{ name: 'Eve'},
+// 	{ $set: { gender: 'm'} },
+// 	{ new: true},
+// 	(err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// })
+
+// Update 'Guy Man' to have an array called 'hates' that includes 'clothes' and 'jobs'
+// Vampire.findOneAndUpdate(
+// 	{ name: 'Guy Man'},
+// 	{ $set: { hates: ['clothes', 'jobs']} },
+// 	{ upsert: true, new: true  },
+// 	(err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// })
+// once again this didn't work, but I'm struggling figuring out why and running out of time.
+
+// Update 'Guy Man's' hates array also to include 'alarm clocks' and 'jackalopes'
+// Vampire.findOneAndUpdate(
+// 	{ name: 'Guy Man'},
+// 	{ $push: { hates: { $each: ['clothes', 'jobs'] } } },
+// 	{upsert: true, new : true},
+// 	(err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// })
+// I think this is right but it didn't work
+
+// Rename 'Eve's' name field to 'moniker'
+// Vampire.findOneAndUpdate(
+// 	{ name: 'Eve'},
+// 	{ $rename: {'name' : 'moniker'} },
+// 	{ new : true},
+// 	(err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// })
+
+// We now no longer want to categorize female gender as "f", but rather as fems. Update all females so that the they are of gender "fems".
+// Vampire.update(
+// 	{ gender: 'f'},
+// 	{ $set: { gender: 'fems'} },
+// 	{ multi: true },
+// 	(err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// })
+
+Vampire.find(
+	{ gender: 'fems'},
+	(err, vampire) => {
+		console.log(vampire);
+		mongoose.connection.close();
+})
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
