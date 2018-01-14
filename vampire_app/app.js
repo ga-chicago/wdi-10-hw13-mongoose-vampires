@@ -92,12 +92,7 @@ mongoose.connection.on('disconnected', () => {
 // 	mongoose.connection.close();
 // });
 
-// Vampire.find({victims: { $gte: 500 }},(err,foundVamps) => {
-// 	console.log(foundVamps);
-// 	mongoose.connection.close();
-// });
-
-// Vampire.find({victims: { $gte: 500 }},(err,foundVamps) => {
+// Vampire.find({victims: { $gt: 500 }},(err,foundVamps) => {
 // 	console.log(foundVamps);
 // 	mongoose.connection.close();
 // });
@@ -112,14 +107,32 @@ mongoose.connection.on('disconnected', () => {
 // 	mongoose.connection.close();
 // });
 
-// Vampire.find({$and:[{victims: { $gte: 150 }},{victims: { $lt: 500 }}]},(err,foundVamps) => {
+// Vampire.find({$and:[{victims: { $gt: 150 }},{victims: { $lt: 500 }}]},(err,foundVamps) => {
 // 	console.log(foundVamps);
 // 	mongoose.connection.close();
 // });
 
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
+// Vampire.find({title:{$exists: true}},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
 
+// Vampire.find({victims:{$exists: false}},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({$and:[{title:{$exists: true}},{victims:{$exists: false}}]},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({$and:[{victims:{$exists: true}},{victims:{$gt: 1000}}]},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
 
 /////////////////////////////////////////////////
 // ### Select with OR
