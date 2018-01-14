@@ -180,6 +180,26 @@ mongoose.connection.on('disconnected', () => {
 
 /////////////////////////////////////////////////
 //### Negative Selection
+// Vampire.find({$and:[{loves:'ribbons'},{eye_color:{ $nin: 'brown' }}]},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({ location: { $nin:'Rome, Italy' } },(err,foundVamps) => {
+// 	// How do I query for just 'Rome' instead of the full location
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({loves: { $nin: [ 'fancy cloaks', 'frilly shirtsleeves', 'appearing innocent', 'being tragic', 'brooding' ] }},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({victims: { $lte: 200 }},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
