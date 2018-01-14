@@ -366,16 +366,26 @@ mongoose.connection.once('open', () => {
 // 		mongoose.connection.close();
 // })
 
-Vampire.find(
-	{ gender: 'fems'},
-	(err, vampire) => {
-		console.log(vampire);
-		mongoose.connection.close();
-})
-
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REMOVE
+// Remove a single document wherein the hair_color is 'brown'
+// Vampire.findOneAndRemove(
+// 	{hair_color: 'brown'},
+// 	(err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// 	}
+// )
+
+// We found out that the vampires with the blue eyes were just fakes! Let's remove all the vampires who have blue eyes from our database.
+// Vampire.remove(
+// 	{eye_color: 'blue'},
+// 	(err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// 	}
+// )
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
