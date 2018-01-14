@@ -66,6 +66,18 @@ mongoose.connection.once('open', () => {
 //     __v: 0,
 //     loves: [],
 //     hair_color: 'black' }
+
+// // dude1
+//  { _id: 5a5a71440a0d8409165658d7,
+//     name: 'Marcelle',
+//     eye_color: 'black',
+//     dob: 1000-02-15T00:00:00.000Z,
+//     location: 'Washington DC, US',
+//     gender: 'm',
+//     victims: 1,
+//     __v: 0,
+//     loves: [ 'the color red', 'rock music' ],
+//     hair_color: '' }
 /////////////////////////////////////////////////
 // ## QUERYING
 /////////////////////////////////////////////////
@@ -240,16 +252,54 @@ mongoose.connection.once('open', () => {
 // 	})
 
 // have not killed more than 200 people
-Vampire.find({
-	victims: {$lte: 200}
-	}, (err, vampire) => {
-		console.log(vampire);
-		mongoose.connection.close();
-	})
+// Vampire.find({
+// 	victims: {$lte: 200}
+// 	}, (err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// 	})
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
+// replace the vampire called 'Claudia' with a vampire called 'Eve'. 'Eve' will have a key called 'portrayed_by' with the value 'Tilda Swinton'
+// Vampire.update(
+// 	{name: 'Claudia'},
+// 	{
+//      $set: { name: 'Eve' },
+//      $setOnInsert: { portrayed_by: 'Tilda Swinton' }
+//   	},
+//   	{ upsert: true },
+// 	(err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();
+// 	})
+
+// Vampire.vampires.update(
+// 	{name: 'Eve'},
+// 	{ $set: { portrayed_by: 'Tilda Swinton' }},
+// 	{upsert: true },
+// 		// console.log(vampire);
+// 		mongoose.connection.close());
+
+// Vampire.find({name: 'Eve'}, (err, vampire) => {
+// 		console.log(vampire);
+// 		mongoose.connection.close();})
+
+// Ok, at this point I got fed up with it not adding the portrayed_by key and gave up for now.
+
+// replace the first male vampire with another whose name is 'Guy Man', and who has a key 'is_actually' with the value 'were-lizard'
+Vampire.findOneAndUpdate(
+	{gender: 'm'},
+	{
+     $set: { name: 'Guy Man', is_actually: 'were-lizard' }
+  	},
+	{ upsert: true },
+	(err, vampire) => {
+		console.log(vampire);
+		mongoose.connection.close();
+	})
+// same here, couldn't get is_actually to show up 
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
