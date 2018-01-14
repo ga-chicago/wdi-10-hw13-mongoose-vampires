@@ -2,7 +2,8 @@
 const mongoose = require('mongoose');
 
 // 2. Require your model (and possibly your extra data source);
-require('./models/vampire.js');
+const Vampire = require('./models/vampire.js');
+const vampireData = require('./populateVampires.js');
 
 // 3. Connect your database and collection name
 mongoose.connect('mongodb://localhost:27017/vampires',{useMongoClient: true});
@@ -19,11 +20,68 @@ mongoose.connection.on('disconnected', () => {
 
 // Note: Remember to close your connection after you add, update, remove from your database
 /////////////////////////////////////////////////
+
 /////////////////////////////////////////////////
 // INSERT USING MONGOOSE
 // ### Add the vampire data that we gave you
 
+// Vampire.collection.insertMany(vampireData,(err, data) => {
+//     console.log("added provided vampire data");
+//     mongoose.connection.close();
+// });
+
 // ### Add some new vampire data
+// Vampire.create({
+//   name: 'Count Sergio',
+//   hair_color: 'brown',
+//   eye_color: 'brown',
+//   dob: new Date(1988, 2, 13, 7, 47),
+//   loves: ['coding','gaming'],
+//   location: 'Chicago, Illinois, US',
+//   gender: 'm',
+//   victims: 100
+// },(err,createdVamp) => {
+// 	console.log(createdVamp,'vamp1 added');
+// })
+
+// Vampire.create({
+//   name: 'test vampy',
+//   hair_color: 'green',
+//   eye_color: 'purple',
+//   dob: new Date(1988, 2, 13, 7, 47),
+//   loves: ['stuff','nothing'],
+//   location: 'Chicago, Illinois, US',
+//   gender: 'm',
+//   victims: 1090
+// },(err,createdVamp) => {
+// 	console.log(createdVamp,'2');
+// })
+
+// Vampire.create({
+//   name: 'Emma',
+//   hair_color: 'brown',
+//   eye_color: 'brown',
+//   dob: new Date(1988, 2, 13, 7, 47),
+//   loves: ['school','tv'],
+//   location: 'Chicago, Illinois, US',
+//   gender: 'f',
+//   victims: 1020
+// },(err,createdVamp) => {
+// 	console.log(createdVamp, '3');
+// })
+
+// Vampire.create({
+//   name: 'Jasmine',
+//   hair_color: 'black',
+//   eye_color: 'red',
+//   dob: new Date(1988, 2, 13, 7, 47),
+//   loves: ['stuff','make-up'],
+//   location: 'Chicago, Illinois, US',
+//   gender: 'f',
+//   victims: 1400
+// },(err,createdVamp) => {
+// 	console.log(createdVamp,'vamp4 added');
+// })
 
 /////////////////////////////////////////////////
 // ## QUERYING
