@@ -158,6 +158,25 @@ mongoose.connection.on('disconnected', () => {
 
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
+// Vampire.find({$or:[{loves:'frilly collars'},{loves:'frilly shirtsleeves'}]},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({loves:'brooding'},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({$or:[{loves:'R&B music'},{loves:'appearing innocent'},{loves:'trickery'},{loves:'lurking in rotting mansions'}]},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
+
+// Vampire.find({$and:[{loves:'fancy cloaks'},{loves:{ $nin: [ 'top hats', 'virgin blood' ] }}]},(err,foundVamps) => {
+// 	console.log(foundVamps);
+// 	mongoose.connection.close();
+// });
 
 /////////////////////////////////////////////////
 //### Negative Selection
