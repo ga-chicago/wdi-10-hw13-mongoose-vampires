@@ -217,15 +217,78 @@ mongoose.connection.on('disconnected', () => {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
+// Vampire.findOneAndUpdate(
+// 	{ name: 'Guy Man' }, 
+// 	{ $set: { gender: 'f' } }, 
+// 	{ new : true }, 
+// 	(err, updated)=>{
+// 		console.log(updated);
+// 		mongoose.connection.close();
+// 	}
+// );
+
+// Vampire.findOneAndUpdate(
+// 	{ name: 'Eve' }, 
+// 	{ $set: { gender: 'm' } }, 
+// 	{ new : true }, 
+// 	(err, updated)=>{
+// 		console.log(updated);
+// 		mongoose.connection.close();
+// 	}
+// );
+
+// Vampire.collection.findOneAndReplace(
+//    { name : 'Guy Man' },
+//    { "name" : "Guy Man", "hates" : ["Clothes","jobs"]}
+// )
+
+// Vampire.collection.findOneAndReplace(
+//    { name : 'Guy Man' },
+//    { "name" : "Guy Man", "hates" : ["Clothes","jobs","jackalopes","alarm clocks"]}
+// )
+
+
+// Vampire.findOneAndUpdate(
+//   	{ name: 'Eve'},
+//   	{ $set: {name : 'moniker'} },
+//   	{ new : true},
+//   	(err, updatedVamp) => {
+//   		console.log(updatedVamp);
+// 			mongoose.connection.close();
+//   	}
+// )
+
+// Vampire.update(
+//  	{ gender: 'f'},
+//   	{ $set: { gender: 'fems'} },
+//  	{ multi: true },
+//  	(err, updatedVamps) => {
+//  		console.log(updatedVamps);
+// 			mongoose.connection.close();
+//  	}
+// )
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REMOVE
 
+// Vampire.findOneAndRemove(
+//  	{hair_color: 'brown'},
+//  	(err, vampire)=> {
+//  		mongoose.connection.close();
+//   	}
+// )
+
+// Vampire.remove(
+//  	{eye_color: 'blue'},
+//  	(err, vampire)=> {
+// 			mongoose.connection.close();
+//  	}
+// )
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 
-// ## HUNGRY FOR MORE
+// ## HUNGRY FOR MORE "NOOOOOOOOOOO!"
 /////////////////////////////////////////////////
 //## Select objects that match one of several values
 
