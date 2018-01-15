@@ -273,7 +273,7 @@ db.once('open', () => {
 	// ]},
 	// (err, data) => {
 	// 	if (err) {
-	// 		console.log(err);
+	// 		console.error(err);
 	// 	}
 	// 	else {
 	// 		console.log(data);
@@ -282,6 +282,80 @@ db.once('open', () => {
 
 /////////////////////////////////////////////////
 // ### Select with OR
+	
+	// find vamps with location ny ny OR nola la
+	// Vampire.find({
+	// 	$or: [{
+	// 		location: 'New York, New York, US'
+	// 	},
+	// 	{
+	// 		location: 'New Orleans, Louisiana, US'
+	// 	}
+	// ]},
+	// (err, data) => {
+	// 		if (err) {
+	// 			console.error(err);
+	// 		}
+	// 		else {
+	// 			console.log(data);
+	// 		}	
+	// })
+
+	//find vamps that love brooding or being tragic
+	// Vampire.find({
+	// 	$or: [{
+	// 		loves: 'brooding'
+	// 	},
+	// 	{
+	// 		loves: 'being tragic'
+	// 	}
+	// ]},
+	// (err, data) => {
+	// 		if (err) {
+	// 			console.error(err);
+	// 		}
+	// 		else {
+	// 			console.log(data);
+	// 		}	
+	// })	
+
+	// //find vamps that have 1k+ victims or love marshmallows (?)
+	// Vampire.find({
+	// 	$or: [{
+	// 		loves: 'marshmallows'
+	// 	},
+	// 	{
+	// 		victims: {
+	// 			$gt: 1000
+	// 			}
+	// 	}
+	// ]},
+	// (err, data) => {
+	// 		if (err) {
+	// 			console.error(err);
+	// 		}
+	// 		else {
+	// 			console.log(data);
+	// 		}	
+	// })	
+
+	// //find vamps with green hair or red eyes
+	// Vampire.find({
+	// 	$or: [{
+	// 		hair_color: 'red'
+	// 	},
+	// 	{
+	// 		eye_color: 'green'
+	// 	}
+	// ]},
+	// (err, data) => {
+	// 		if (err) {
+	// 			console.error(err);
+	// 		}
+	// 		else {
+	// 			console.log(data);
+	// 		}	
+	// })	
 
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
