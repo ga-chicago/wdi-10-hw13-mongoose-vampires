@@ -204,6 +204,16 @@ mongoose.connection.on('disconnected', () => {
 /////////////////////////////////////////////////
 // ## REPLACE
 
+// Vampire.collection.findOneAndReplace(
+//    { name : 'Claudia' },
+//    { "name" : "Eve", "portrayed_by" : 'Tilda Swinton' }
+// )
+
+// Vampire.collection.findOneAndReplace(
+//    { gender : 'm' },
+//    { "name" : "Guy Man", "is_actually" : 'were-lizard' }
+// )
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
