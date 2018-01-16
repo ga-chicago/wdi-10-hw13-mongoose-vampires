@@ -360,6 +360,84 @@ db.once('open', () => {
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
 
+	// //find vamps that love frilly shirtsleeves or frilly collars
+	// Vampire.find({
+	// 	$or: [{
+	// 		loves: 'filly shirtsleeves'
+	// 	},
+	// 	{
+	// 		loves: 'frilly collars'
+	// 	}
+	// ]},
+	// (err, data) => {
+	// 		if (err) {
+	// 			console.error(err);
+	// 		}
+	// 		else {
+	// 			console.log(data);
+	// 		}	
+	// })	
+
+	// //find vamps that love brooding
+	// Vampire.find({
+	// 	loves: 'brooding'
+	// 	},
+	// (err, data) => {
+	// 		if (err) {
+	// 			console.error(err);
+	// 		}
+	// 		else {
+	// 			console.log(data);
+	// 		}	
+	// })	
+
+	// //find vamps that love one of the following: fancy cloaks, frilly shirtsleeves, appearing innocent, being tragic, brooding
+	// Vampire.find({
+	// 	$or: [{
+	// 		loves: 'fancy cloaks'
+	// 	},
+	// 	{
+	// 		loves: 'frilly shirtsleeves'
+	// 	},
+	// 	{
+	// 		loves: 'appearing innocent'
+	// 	},
+	// 	{
+	// 		loves: 'being tragic'
+	// 	},
+	// 	{
+	// 		loves: 'brooding'
+	// 	}
+	// ]},
+	// (err, data) => {
+	// 		if (err) {
+	// 			console.error(err);
+	// 		}
+	// 		else {
+	// 			console.log(data);
+	// 		}	
+	// })	
+
+	// //find vamps that love fancy cloaks but not if they also love top hats or virgin blood
+	// Vampire.find({
+	// 	$and: [{
+	// 		loves: 'fancy cloaks'
+	// 	},
+	// 	{
+	// 		loves: {
+	// 			$nin: ['top hats', 'virgin blood']
+	// 		}
+	// 	}
+	// ]},
+	// (err, data) => {
+	// 		if (err) {
+	// 			console.error(err);
+	// 		}
+	// 		else {
+	// 			console.log(data);
+	// 		}	
+	// })	
+
 /////////////////////////////////////////////////
 //### Negative Selection
 
