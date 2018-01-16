@@ -441,6 +441,71 @@ db.once('open', () => {
 /////////////////////////////////////////////////
 //### Negative Selection
 
+	// //find vamps that love ribbons & dont have brown eyes
+	// Vampire.find({
+	// 	$and: [{
+	// 		loves: 'ribbons'
+	// 	},
+	// 	{
+	// 		eye_color: {
+	// 			$ne: 'brown'
+	// 		}
+	// 	}
+	// ]},
+	// (err, data) => {
+	// 		if (err) {
+	// 			console.error(err);
+	// 		}
+	// 		else {
+	// 			console.log(data);
+	// 		}	
+	// })	
+
+	// //find vamps that are not from rome
+	// Vampire.find({
+	// 	location: {
+	// 		$ne: 'Rome'
+	// 	}
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.error(err)
+	// 	}
+	// 	else {
+	// 		console.log(data)
+	// 	}
+	// })
+
+	// //find vamps that do not love any of this: fancy cloaks, frilly shirtsleeves, appearing innocent, being tragic, brooding
+	// Vampire.find({
+	// 	loves: {
+	// 		$nin: ['fancy cloaks', 'frilly shirtsleeves', 'appearing innocent', 'being tragic', 'brooding']
+	// 	}
+	// },
+	// (err, data) => {
+	// 		if (err) {
+	// 			console.error(err);
+	// 		}
+	// 		else {
+	// 			console.log(data);
+	// 		}	
+	// })	
+
+	// //find vamps that have not killed more than 200 people
+	// Vampire.find({
+	// 	victims: {
+	// 		$lte: 200
+	// 	}
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.error(err);
+	// 	}
+	// 	else {
+	// 		console.log(data);
+	// 	}	
+	// })	
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
