@@ -157,6 +157,50 @@ mongoose.connection.on("error", (error) => {
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
 
+// have a title property
+// Vampire.find({ name:{ $exists: true}}, (err, foundVamps) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(foundVamps)
+// 	}
+// })
+
+// Vampire.find({ victims:{ $exists: false}}, (err, foundVamps) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(foundVamps)
+// 	}
+// })
+
+// have a title AND no victims
+// Vampire.find({ $and: [
+// 		{name: { $exists: true}},
+// 		{victims: { $exists: false}}
+// 	]
+// }, (err, foundVamps) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(foundVamps)
+// 	}
+// })
+
+// have victims AND the victims they have are greater than 1000
+// Vampire.find({ $and: [
+// 		{victims: {$exists: true}},
+// 		{victims: {$gt: 1000}}
+// 	]}, (err, foundVamps) => {
+// 		if (err) {
+// 			console.log(err)
+// 		} else {
+// 			console.log(foundVamps)
+// 		}
+// })	
+
+
+
 /////////////////////////////////////////////////
 // ### Select with OR
 
