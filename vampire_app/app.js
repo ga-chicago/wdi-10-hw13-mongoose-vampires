@@ -351,25 +351,65 @@ mongoose.connection.on("error", (error) => {
 // })
 
 // have not killed more than 200 people
-Vampire.find({
-	victims: {$lte: 200}
-}, (err, foundVamps) => {
-	if (err) {
-		console.log(err)
-	} else {
-		console.log(foundVamps)
-	}
-})
-
+// Vampire.find({
+// 	victims: {$lte: 200}
+// }, (err, foundVamps) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(foundVamps)
+// 	}
+// })
 
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
 
+// replace the vampire called 'Claudia' with a vampire called 'Eve'. 'Eve' will have a key called 'portrayed_by' with the value 'Tilda Swinton'
+// Vampire.findOneAndUpdate({name: "Claudia"},
+// 	{$set: {name: "Eve"}},
+// 	{new: true},
+// 	(err, replacedVamp) => {
+// 		if (err) {
+// 			console.log(err)
+// 		} else {
+// 			console.log(replacedVamp)
+// 		}
+// 	}	
+// )
+
+
+// replace the first male vampire with another whose name is 'Guy Man', and who has a key 'is_actually' with the value 'were-lizard'
+
+// Vampire.findOneAndUpdate({gender: "m"},
+// 	{$set: {name: "Guy Man"}},
+// 	{new: true},
+// 	(err, replacedVamp) => {
+// 		if (err) {
+// 			console.log(err)
+// 		} else {
+// 			console.log(replacedVamp)
+// 		}
+// 	}	
+// 	)
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
+
+// Update 'Guy Man' to have a gender of 'f'
+Vampire.findOneAndUpdate({name: "Guy Man"},
+	{$set: {gender: "f"}},
+	{new: true},
+	(err, updatedVamp) => {
+		if (err) {
+			console.log(err)
+		} else {
+			console.log(updatedVamp)
+		}
+	})
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
