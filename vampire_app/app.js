@@ -453,22 +453,42 @@ mongoose.connection.on("error", (error) => {
 
 // We now no longer want to categorize female gender as "f", but rather as fems. Update all females so that the they are of gender "fems".
 
-Vampire.update({gender: "f"},
-	{$set: {gender: "fems"}},
-	(err, updatedVamps) => {
-		if (err) {
-			console.log(err)
-		} else {
-			console.log(updatedVamps)
-		}
-	}
-)
+// Vampire.update({gender: "f"},
+// 	{$set: {gender: "fems"}},
+// 	(err, updatedVamps) => {
+// 		if (err) {
+// 			console.log(err)
+// 		} else {
+// 			console.log(updatedVamps)
+// 		}
+// 	}
+// )
 
 
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REMOVE
+
+// Remove a single document wherein the hair_color is 'brown'
+
+// Vampire.findOneAndRemove({hair_color: "brown"}, (err, removedVamp) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(removedVamp)
+// 	}
+// })
+
+
+// Remove all vamps with blue eyes
+// Vampire.remove({eye_color: "blue"}, (err, removedVamps) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(removedVamps)
+// 	}
+// })
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
