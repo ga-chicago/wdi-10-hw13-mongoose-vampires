@@ -315,6 +315,54 @@ mongoose.connection.on("error", (error) => {
 /////////////////////////////////////////////////
 //### Negative Selection
 
+// love ribbons but do not have brown eyes
+// Vampire.find({ $and:
+// 	[ {loves: "ribbons"},
+// 	{eye_color: {$ne: "brown"}}]
+// }, (err, foundVamps) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(foundVamps)
+// 	}
+// })
+
+// are not from Rome
+// Vampire.find({
+// 	location: {$ne: "Rome, Italy"}
+// }, (err, foundVamps) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(foundVamps)
+// 	}
+// })
+
+// do not love any of the following: [fancy cloaks, frilly shirtsleeves, appearing innocent, being tragic, brooding]
+// Vampire.find({
+// 	loves: { $nin: [
+// 		"fancy cloaks", "frilly shirtsleeves", "appearing innocent", "being tragic", "brooding"]}
+// }, (err, foundVamps) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(foundVamps)
+// 	}
+// })
+
+// have not killed more than 200 people
+Vampire.find({
+	victims: {$lte: 200}
+}, (err, foundVamps) => {
+	if (err) {
+		console.log(err)
+	} else {
+		console.log(foundVamps)
+	}
+})
+
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
