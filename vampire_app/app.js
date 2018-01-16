@@ -38,73 +38,121 @@ mongoose.connection.on("error", (error) => {
 
 // ### Add some new vampire data
 
-Vampire.create({
-	name: "Kevin",
-	hair_color: "black",
-	eye_color: "blue",
-	dob: "April 1, 1970",
-	location: "Florida",
-	gender: "m",
-	victims: 10
-}, (err, createdVampire) => {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(createdVampire)
-	}
-})
+// Vampire.create({
+// 	name: "Kevin",
+// 	hair_color: "black",
+// 	eye_color: "blue",
+// 	dob: "April 1, 1970",
+// 	location: "Florida",
+// 	gender: "m",
+// 	victims: 10
+// }, (err, createdVampire) => {
+// 	if (err) {
+// 		console.log(err);
+// 	} else {
+// 		console.log(createdVampire)
+// 	}
+// })
 
-Vampire.create({
-	name: "Mark",
-	hair_color: "",
-	eye_color: "blue",
-	dob: "January 1, 1808",
-	location: "Florida",
-	gender: "m",
-	victims: 100
-}, (err, createdVampire) => {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(createdVampire)
-	}
-})
+// Vampire.create({
+// 	name: "Mark",
+// 	hair_color: "",
+// 	eye_color: "blue",
+// 	dob: "January 1, 1808",
+// 	location: "Florida",
+// 	gender: "m",
+// 	victims: 100
+// }, (err, createdVampire) => {
+// 	if (err) {
+// 		console.log(err);
+// 	} else {
+// 		console.log(createdVampire)
+// 	}
+// })
 
-Vampire.create({
-	name: "Sally",
-	hair_color: "red",
-	eye_color: "green",
-	dob: "March 10, 1990",
-	location: "Ireland",
-	gender: "f",
-	victims: 3
-}, (err, createdVampire) => {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(createdVampire)
-	}
-})
+// Vampire.create({
+// 	name: "Sally",
+// 	hair_color: "red",
+// 	eye_color: "green",
+// 	dob: "March 10, 1990",
+// 	location: "Ireland",
+// 	gender: "f",
+// 	victims: 3
+// }, (err, createdVampire) => {
+// 	if (err) {
+// 		console.log(err);
+// 	} else {
+// 		console.log(createdVampire)
+// 	}
+// })
 
-Vampire.create({
-	name: "Sue",
-	hair_color: "brown",
-	eye_color: "brown",
-	dob: "November 20, 1000",
-	location: "Russia",
-	gender: "f",
-	victims: 10
-}, (err, createdVampire) => {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(createdVampire)
-	}
-})
+// Vampire.create({
+// 	name: "Sue",
+// 	hair_color: "brown",
+// 	eye_color: "brown",
+// 	dob: "November 20, 1000",
+// 	location: "Russia",
+// 	gender: "f",
+// 	victims: 10
+// }, (err, createdVampire) => {
+// 	if (err) {
+// 		console.log(err);
+// 	} else {
+// 		console.log(createdVampire)
+// 	}
+// })
 /////////////////////////////////////////////////
 // ## QUERYING
 /////////////////////////////////////////////////
 // ### Select by comparison
+
+// All female
+// Vampire.find({ gender: "f" }, (err, foundVamp) => {
+// 	if (err) {
+// 		console.log(err);
+// 	} else {
+// 		console.log(foundVamp)
+// 	}
+// })
+
+// At least 500 victims
+// Vampire.find({ victims: { $gt: 500} }, (err, foundVamps) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(foundVamps)
+// 	}
+// })
+
+// have fewer than or equal to 150 victims
+
+// Vampire.find({ victims: { $lte: 150} }, (err, foundVamps) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(foundVamps)
+// 	}
+// })
+
+
+// have a victim count is not equal to 210234
+// Vampire.find({ $or: [{victims: {$lt: 210234 }}, {victims: {$gt: 210234}}]}, (err, foundVamps) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(foundVamps)
+// 	}
+// })
+
+// have greater than 150 AND fewer than 500 victims
+// Vampire.find({victims: { $gt: 150, $lt: 500}}, (err, foundVamps) => {
+// 	if (err) {
+// 		console.log(err)
+// 	} else {
+// 		console.log(foundVamps)
+// 	}
+// })
+
 
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
