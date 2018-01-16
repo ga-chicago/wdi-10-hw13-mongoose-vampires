@@ -399,16 +399,71 @@ mongoose.connection.on("error", (error) => {
 // ## UPDATE
 
 // Update 'Guy Man' to have a gender of 'f'
-Vampire.findOneAndUpdate({name: "Guy Man"},
-	{$set: {gender: "f"}},
-	{new: true},
-	(err, updatedVamp) => {
+// Vampire.findOneAndUpdate({name: "Guy Man"},
+// 	{$set: {gender: "f"}},
+// 	{new: true},
+// 	(err, updatedVamp) => {
+// 		if (err) {
+// 			console.log(err)
+// 		} else {
+// 			console.log(updatedVamp)
+// 		}
+// 	})
+
+// Update 'Eve' to have a gender of 'm'
+// Vampire.findOneAndUpdate({name: "Eve"},
+// 	 {$set: {gender: "m"}},
+// 	 {new: true},
+// 	 	(err, updatedVamp) => {
+// 	 		if (err) {
+// 	 			console.log(err)
+// 	 		} else {
+// 	 			console.log(updatedVamp)
+// 	 		}
+// 	 	}
+// 	)
+
+// Update 'Guy Man' to have an array called 'hates' that includes 'clothes' and 'jobs'
+// Vampire.findOneAndUpdate({name: "Guy Man"},
+// 		{$add: {hates: ["clothes", "jobs"]}},
+// 		{new: true},
+// 		(err, updatedVamp) => {
+// 			if (err) {
+// 				console.log(err)
+// 			} else {
+// 				console.log(updatedVamp)
+// 			}
+// 		}
+// 	)
+
+// Update 'Guy Man's' hates array also to include 'alarm clocks' and 'jackalopes'
+
+
+// Rename 'Eve's' name field to 'moniker'
+// Vampire.findOneAndUpdate({name: "Eve"},
+// 		{$rename: {"name": "moniker"}},
+// 		(err, renamedVamp) => {
+// 			if (err) {
+// 				console.log(err)
+// 			} else {
+// 				console.log(renamedVamp)
+// 			}
+// 		}
+// 	)
+
+// We now no longer want to categorize female gender as "f", but rather as fems. Update all females so that the they are of gender "fems".
+
+Vampire.update({gender: "f"},
+	{$set: {gender: "fems"}},
+	(err, updatedVamps) => {
 		if (err) {
 			console.log(err)
 		} else {
-			console.log(updatedVamp)
+			console.log(updatedVamps)
 		}
-	})
+	}
+)
+
 
 
 /////////////////////////////////////////////////
