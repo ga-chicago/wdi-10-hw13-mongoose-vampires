@@ -510,6 +510,52 @@ db.once('open', () => {
 /////////////////////////////////////////////////
 // ## REPLACE
 
+	//replace the vamp 'claudia' with a vamp 'eve' with a key value pair of 'portrayed_by' and 'tilda swinton'
+	Vampire.findOneAndUpdate(
+	{
+		name: 'Claudia'
+	},
+	{
+		$set: {
+			name: 'Eve',
+			portrayed_by: 'Tilda Swinton'
+		}
+	},
+	{
+		upsert: false
+	},
+	(err, data) => {
+		if (err) {
+			console.error(err);
+		}
+		else {
+			console.log(data);
+		}
+	})
+
+	//replace the first male vampire with another whose name is 'Guy Man' and who has a key of 'is actually' with the value 'were-lizard'
+	Vampire.findOneAndUpdate(
+	{
+		gender: 'm'
+	},
+	{
+		$set: {
+			name: "Guy Man"
+			is_actually: 'were-lizard'
+		}
+	},
+	{
+		upsert: false
+	},
+	(err, replacedVamp) => {
+		if (err) {
+			console.log(err)
+		} 
+		else {
+			console.log(replacedVamp)
+		}
+	})
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
