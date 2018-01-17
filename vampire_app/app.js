@@ -510,15 +510,174 @@ db.once('open', () => {
 /////////////////////////////////////////////////
 // ## REPLACE
 
-	//replace the vamp 'claudia' with a vamp 'eve' with a key value pair of 'portrayed_by' and 'tilda swinton'
-	Vampire.findOneAndUpdate(
+	// //replace the vamp 'claudia' with a vamp 'eve' with a key value pair of 'portrayed_by' and 'tilda swinton'
+	// Vampire.findOneAndUpdate(
+	// {
+	// 	name: 'Claudia'
+	// },
+	// {
+	// 	$set: {
+	// 		name: 'Eve',
+	// 		portrayed_by: 'Tilda Swinton'
+	// 	}
+	// },
+	// {
+	// 	upsert: false
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.error(err);
+	// 	}
+	// 	else {
+	// 		console.log(data);
+	// 	}
+	// })
+
+	// //replace the first male vampire with another whose name is 'Guy Man' and who has a key of 'is actually' with the value 'were-lizard'
+	// Vampire.findOneAndUpdate(
+	// {
+	// 	gender: 'm'
+	// },
+	// {
+	// 	$set: {
+	// 		name: "Guy Man"
+	// 		is_actually: 'were-lizard'
+	// 	}
+	// },
+	// {
+	// 	upsert: false
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.log(err)
+	// 	} 
+	// 	else {
+	// 		console.log(data)
+	// 	}
+	// })
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// ## UPDATE
+
+// // update 'Guy Man' to have gender f
+// 	Vampire.findOneAndUpdate(
+// 	{
+// 		name: "Guy Man"
+// 	},
+// 	{
+// 		$set: {
+// 			gender: "f"
+// 		}
+// 	},
+// 	{
+// 		upsert: false
+// 	},
+// 	(err, data) => {
+// 		if (err) {
+// 			console.log(err)
+// 		} 
+// 		else {
+// 			console.log(data)
+// 		}
+// 	})
+
+	// //update eve to have gender m
+	// Vampire.findOneAndUpdate(
+	// {
+	// 	name: "Eve"
+	// },
+	// {
+	// 	$set: {
+	// 		gender: "m"
+	// 	}
+	// },
+	// {
+	// 	upsert: false
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.log(err)
+	// 	} 
+	// 	else {
+	// 		console.log(data)
+	// 	}
+	// })
+
+	// //update guy man to have an array called hates that includes clothes & jobs
+	// Vampire.findOneAndUpdate(
+	// {
+	// 	name: 'Guy Man'
+	// },
+	// {
+	// 	$set: {
+	// 		hates: ['clothes', 'jobs']
+	// 	}
+	// },
+	// {
+	// 	upsert: false
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.log(err)
+	// 	} 
+	// 	else {
+	// 		console.log(data)
+	// 	}
+	// })
+
+	// //update guy man's hates array to also include jackalopes and alarm clocks
+	// Vampire.findOneAndUpdate(
+	// {
+	// 	name: 'Guy Man'
+	// },
+	// {
+	// 	$addToSet: {
+	// 		hates: ['jackalopes', 'alarm clocks'];
+	// 	}
+	// },
+	// {
+	// 	upsert: false
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.log(err)
+	// 	} 
+	// 	else {
+	// 		console.log(data)
+	// 	}
+	// })
+
+	// //rename eve's name field to moniker
+	// Vampire.findOneAndUpdate(
+	// {
+	// 	name: 'Eve'
+	// },
+	// {
+	// 	$rename: {
+	// 		name: 'moniker'
+	// 	}
+	// },
+	// {
+	// 	upsert: false
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.log(err)
+	// 	} 
+	// 	else {
+	// 		console.log(data)
+	// 	}
+	// })	
+
+	//update all vamps with the gender f to have the gender fems (?)
+	Vampire.update(
 	{
-		name: 'Claudia'
+		gender: 'f'
 	},
 	{
 		$set: {
-			name: 'Eve',
-			portrayed_by: 'Tilda Swinton'
+			gender: 'fem';
 		}
 	},
 	{
@@ -526,39 +685,13 @@ db.once('open', () => {
 	},
 	(err, data) => {
 		if (err) {
-			console.error(err);
-		}
-		else {
-			console.log(data);
-		}
-	})
-
-	//replace the first male vampire with another whose name is 'Guy Man' and who has a key of 'is actually' with the value 'were-lizard'
-	Vampire.findOneAndUpdate(
-	{
-		gender: 'm'
-	},
-	{
-		$set: {
-			name: "Guy Man"
-			is_actually: 'were-lizard'
-		}
-	},
-	{
-		upsert: false
-	},
-	(err, replacedVamp) => {
-		if (err) {
 			console.log(err)
 		} 
 		else {
-			console.log(replacedVamp)
+			console.log(data)
 		}
 	})
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// ## UPDATE
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
