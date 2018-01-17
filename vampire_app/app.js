@@ -670,18 +670,52 @@ db.once('open', () => {
 	// 	}
 	// })	
 
-	//update all vamps with the gender f to have the gender fems (?)
-	Vampire.update(
+	// //update all vamps with the gender f to have the gender fems (?)
+	// Vampire.update(
+	// {
+	// 	gender: 'f'
+	// },
+	// {
+	// 	$set: {
+	// 		gender: 'fem';
+	// 	}
+	// },
+	// {
+	// 	upsert: false
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.log(err)
+	// 	} 
+	// 	else {
+	// 		console.log(data)
+	// 	}
+	// })
+
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// ## REMOVE
+
+
+	// //remove a single document wherein the hair_color is brown
+	// Vampire.findOneAndRemove(
+	// {
+	// 	hair_color: 'brown'
+	// },
+	// (err, data) => {
+	// 	if (err) {
+	// 		console.log(err)
+	// 	} 
+	// 	else {
+	// 		console.log(data)
+	// 	}
+	// })
+
+	//remove all vamps w/ blue eyes
+	Vampire.remove(
 	{
-		gender: 'f'
-	},
-	{
-		$set: {
-			gender: 'fem';
-		}
-	},
-	{
-		upsert: false
+		eye_color: 'blue'
 	},
 	(err, data) => {
 		if (err) {
@@ -690,12 +724,7 @@ db.once('open', () => {
 		else {
 			console.log(data)
 		}
-	})
-
-
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// ## REMOVE
+	})	
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
